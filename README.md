@@ -1,5 +1,28 @@
 # Badamoyeo API
 
+> **Team project · Spring Boot backend**
+>
+> 바다모여는 해양 예보 데이터를 바탕으로 사용자가 활동 목적에 맞는 장소를 탐색하고, 예보·커뮤니티·즐겨찾기·AI 추천 기능을 이용할 수 있도록 만든 서비스입니다. 이 저장소는 팀 프로젝트의 백엔드 API 구현을 다룹니다.
+
+## 프로젝트 연결
+
+- 전체 팀 프로젝트 원본 (프론트엔드·백엔드·설계 문서): <https://lab.ssafy.com/pjy008008/pjn_final_d4_t05>
+- 프론트엔드: <https://github.com/commoner-choi/bada-front>
+- 백엔드: 이 저장소
+
+프론트엔드 저장소는 서비스 전체 흐름을 확인하기 위한 팀 구성 요소입니다. 이 저장소에서는 Spring Boot 기반 API와 데이터 처리 구현에 집중합니다.
+
+## 시스템 흐름
+
+```mermaid
+flowchart LR
+    U[User] --> FE[Vue Frontend]
+    FE -->|REST API / HttpOnly refresh cookie| BE[Spring Boot API\nthis repository]
+    BE --> DB[(MySQL)]
+    BE --> MARINE[Marine forecast public API]
+    BE --> AI[AI recommendation and analysis]
+```
+
 바다모여 서비스의 Spring Boot 백엔드 API입니다. 해양 예보 공공데이터를 수집하고, 대시보드/스팟/게시글/댓글/즐겨찾기/사용자 인증 API를 제공합니다.
 
 ## 기술 스택
